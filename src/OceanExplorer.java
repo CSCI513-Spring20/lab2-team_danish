@@ -75,7 +75,7 @@ public class OceanExplorer extends Application {
 						break;
 				}
 				shipImageView.setX(ship.getShipLocation().x * scale);
-				shipImageView.setY(ship.getShipLocation().x * scale);
+				shipImageView.setY(ship.getShipLocation().y * scale);
 			}
 		});
 	}

@@ -8,5 +8,4 @@ public class OceanMap {
     public boolean[][] getMap() {
         return grid;
     }
-
 }

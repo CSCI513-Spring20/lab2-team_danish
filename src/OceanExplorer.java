@@ -9,6 +9,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.layout.AnchorPane;
 import java.io.FileInputStream;
+import java.util.Random;
 
 public class OceanExplorer extends Application {
 
@@ -28,14 +29,26 @@ public class OceanExplorer extends Application {
 
 		AnchorPane root = new AnchorPane();
 
+		Random rng = new Random();
 		for (int x = 0; x < dimensions; x++) {
 			for (int y = 0; y < dimensions; y++) {
+				double rand = rng.nextDouble();
+
 				Rectangle rect = new Rectangle(x * scale, y * scale, scale, scale);
+				if (rand < .1) {
+					rect.setStroke(Color.BLACK);
+					rect.setFill(Color.GREEN);
+					root.getChildren().add(rect);
+					continue;
+				}
 				rect.setStroke(Color.BLACK);
 				rect.setFill(Color.PALETURQUOISE);
 				root.getChildren().add(rect);
 			}
 		}
+
+
+
 
 		Image shipImage = new Image(new FileInputStream("Lab2/ship.png"), 50, 50, true, true);
 
